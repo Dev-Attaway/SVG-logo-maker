@@ -1,6 +1,8 @@
+const Shape = require("./shape");
+
 class Triangle extends Shape
 {
-    constructor( color)
+    constructor(color)
     {
         super(color);
     }
@@ -11,3 +13,4 @@ class Triangle extends Shape
     }
     
 }
+module.exports = Triangle;

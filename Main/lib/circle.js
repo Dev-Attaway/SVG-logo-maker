@@ -1,3 +1,5 @@
+const Shape = require("./shape");
+
 class Circle extends Shape
 {
     constructor(color)
@@ -9,3 +11,4 @@ class Circle extends Shape
         return `<circle cx="150" cy="100" r="80" style="fill=${this.color}" />`;
     }
 }
+module.exports = Circle;
