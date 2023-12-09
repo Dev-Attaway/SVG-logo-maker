@@ -1,9 +1,8 @@
 // calling the inquier package
 const inquirer = require('inquirer');
+const shapeQuery = require('./shapeQuery.js');
 
-const generateSVG = require('./generateSVG');
 
-const Shape = require('./shape');
 
 // refer to https://www.npmjs.com/package/inquirer-maxlength-input-prompt
 const MaxLengthInputPrompt = require('inquirer-maxlength-input-prompt')
@@ -15,12 +14,8 @@ let shapes = ['Circle', 'Triangle', 'Square'];
 // const { createDocument } = require('./document');
 
 class CLI {
-  constructor() {
-    this.title = '';
-    this.tasks = [];
-  }
-  
-  // a CLI method 
+
+  // this function will be called in the index. js
   run() {
 
     // returning the data from inquirer's prompt
@@ -41,11 +36,10 @@ class CLI {
           type: 'list',
           name: 'shape',
           message: 'Please choose a background shape: ',
-  
+
           // ['circle', 'triangle', 'square'] is loaded into choices 
           choices: shapes
         },
-
         {
           type: 'input',
           name: 'shapeColor',
@@ -56,8 +50,13 @@ class CLI {
         console.log('Generated logo.svg');
         // we are passing the inquirer data to the function formatSVG
         // found in generateSVG.js
-
-        generateSVG.formatSVG(inquirer)
+        const currentShape = new shapeQuery();
+        
+        // passing the data grabbed from inquirer to the class object currentShape
+        // whose function findShape will determine, create, and return the shape class 
+        // selected by the user
+        let thing = currentShape.findShape(inquirer.shape , inquirer.shapeColor)
+        console.log(thing);
 
       });
   }

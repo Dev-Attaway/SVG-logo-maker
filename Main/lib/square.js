@@ -1,3 +1,5 @@
+const Shape = require("./shape");
+
 class Square extends Shape
 {
     constructor(color)
@@ -10,3 +12,4 @@ class Square extends Shape
                 style="fill: ${this.color}"/>`
     }
 }
+module.exports = Square;
