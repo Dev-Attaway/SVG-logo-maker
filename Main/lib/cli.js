@@ -1,6 +1,7 @@
 // calling the inquier package
 const inquirer = require('inquirer');
 const shapeQuery = require('./shapeQuery.js');
+const LogoText = require('./generateLogoText.js');
 
 
 
@@ -51,12 +52,16 @@ class CLI {
         // we are passing the inquirer data to the function formatSVG
         // found in generateSVG.js
         const currentShape = new shapeQuery();
-        
+        const loadedLogoText = new LogoText(inquirer.logo ,inquirer.textColor );
+
         // passing the data grabbed from inquirer to the class object currentShape
         // whose function findShape will determine, create, and return the shape class 
         // selected by the user
         let ldShape = currentShape.findShape(inquirer.shape , inquirer.shapeColor)
-        console.log(ldShape);
+
+        let currentText = ldShape.render() + loadedLogoText.render();
+        
+        console.log(currentText);
 
       });
   }
