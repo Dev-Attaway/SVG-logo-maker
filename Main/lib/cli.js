@@ -55,8 +55,8 @@ class CLI {
         // passing the data grabbed from inquirer to the class object currentShape
         // whose function findShape will determine, create, and return the shape class 
         // selected by the user
-        let thing = currentShape.findShape(inquirer.shape , inquirer.shapeColor)
-        console.log(thing);
+        let ldShape = currentShape.findShape(inquirer.shape , inquirer.shapeColor)
+        console.log(ldShape);
 
       });
   }
