@@ -59,10 +59,8 @@ class CLI {
         // selected by the user
         let ldShape = currentShape.findShape(inquirer.shape , inquirer.shapeColor)
 
-        let currentText = ldShape.render() + loadedLogoText.render();
+        currentShape.writeToFile(ldShape.render() + loadedLogoText.render());
         
-        console.log(currentText);
-
       });
   }
 }

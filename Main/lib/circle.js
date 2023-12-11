@@ -8,7 +8,8 @@ class Circle extends Shape
     }
     render()
     {
-        return `<circle cx="150" cy="100" r="80" style="fill=${this.color}" />`;
+        return `<svg version="1.1" width="500" height="500" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="150" cy="100" r="80" fill="${this.color}" />`;
     }
 }
 module.exports = Circle;

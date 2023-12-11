@@ -1,16 +1,13 @@
 const Shape = require("./shape");
 
-class Triangle extends Shape
-{
-    constructor(color)
-    {
+class Triangle extends Shape {
+    constructor(color) {
         super(color);
     }
-    render()
-    {
-        return `<polygon points="250,60 100,400 400,400"
-         cx="150" cy="100" r="80" class="triangle" style="fill=${this.color}"/>`
+    render() {
+        return `
+            <svg id="triangle" width="500" height="500"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >
+            <polygon points="150,0 0,250 300,250" style="fill:${this.color}" />`
     }
-    
 }
 module.exports = Triangle;
