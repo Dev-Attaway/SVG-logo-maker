@@ -52,15 +52,13 @@ class CLI {
         // we are passing the inquirer data to the function formatSVG
         // found in generateSVG.js
         const currentShape = new shapeQuery();
-        const loadedLogoText = new LogoText(inquirer.logo ,inquirer.textColor );
+        const loadedLogoText = new LogoText(inquirer.logo, inquirer.textColor);
 
         // passing the data grabbed from inquirer to the class object currentShape
         // whose function findShape will determine, create, and return the shape class 
         // selected by the user
-        let ldShape = currentShape.findShape(inquirer.shape , inquirer.shapeColor)
-
-        currentShape.writeToFile(ldShape.render() + loadedLogoText.render());
-        
+        let ldShape = currentShape.findShape(inquirer.shape, inquirer.shapeColor)
+        currentShape.writeToFile(currentShape.formatSVG() + ldShape.render() + loadedLogoText.render());
       });
   }
 }
