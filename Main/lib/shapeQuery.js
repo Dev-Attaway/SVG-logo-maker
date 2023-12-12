@@ -1,10 +1,12 @@
 const Circle = require('./circle')
 const Triangle = require('./triangle')
 const Square = require('./square')
+const FileWrite = require('fs');
+
 
 class ShapeQuery {
 
-    findShape(shape ,shapeColor) {
+    findShape(shape, shapeColor) {
         let foundShape;
 
         switch (shape) {
@@ -21,6 +23,26 @@ class ShapeQuery {
                 break;
         }
         return foundShape;
+    }
+
+    writeToFile(data) {
+
+        // a filename is created which has the address of ./README.md, which
+        //  doesn't exist in this moment 
+        const filename = "output/logo.svg";
+
+        // method is used to asynchronously write the specified data to a file.
+        // By default, the file would be replaced if it exists. 
+
+        FileWrite.writeFile(filename, data, function (err) {
+            err ? console.log(err) : console.log(filename + " created!")
+
+            // file: It is a string, Buffer, URL or file description integer that denotes
+            // the path of the file where it has to be written. 
+            // data: It is a string, Buffer, TypedArray or DataView that will be written to the file.
+            // function (err) will display an error if the write didn't occur otherwise
+            // it will display the success message 'filename +  created!'
+        });
     }
 }
 module.exports = ShapeQuery;
