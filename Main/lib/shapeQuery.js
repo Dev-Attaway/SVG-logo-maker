@@ -8,7 +8,7 @@ class ShapeQuery {
         let foundShape;
 
         // returning the foundShape based on the value of the variable shape
-        // this shape is also created and given a color based on the value of shapeColor
+        // This shape is also created and given a color based on the value of shapeColor
         switch (shape) {
             case 'Circle':
                 foundShape = new Circle(shapeColor);
@@ -27,21 +27,21 @@ class ShapeQuery {
 
     writeToFile(data) {
 
-        // a filename is created which has the address of ./README.md, which
-        //  doesn't exist in this moment 
+        // a filename is created which has the address ./README.md, which
+        //  doesn't exist at this moment 
         const filename = "output/logo.svg";
 
-        // method is used to asynchronously write the specified data to a file.
+        // method is used to write the specified data to a file asynchronously.
         // By default, the file would be replaced if it exists. 
 
         FileWrite.writeFile(filename, data, function (err) {
             err ? console.log(err) : console.log(filename + " created!")
 
-            // file: It is a string, Buffer, URL or file description integer that denotes
+            // file: It is a string, Buffer, URL, or file description integer that denotes
             // the path of the file where it has to be written. 
-            // data: It is a string, Buffer, TypedArray or DataView that will be written to the file.
+            // data: It is a string, Buffer, TypedArray, or DataView that will be written to the file.
             // function (err) will display an error if the write didn't occur otherwise
-            // it will display the success message 'filename +  created!'
+            //It will display the success message 'filename +  created!'
         });
     }
 
