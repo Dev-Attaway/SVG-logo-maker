@@ -5,14 +5,14 @@ const Square = require('../lib/square');
 
 describe('ShapeQuery', () => {
     describe('findShape', () => {
-        // testing all the cases in which an Circle, Triangle, or a Square object can be generated
+        // testing all the cases in which a Circle, Triangle, or Square object can be generated
         it('Should create an object "shape" based on the parameter given', () => {
             const test_string = 'Cirlce';
             const color = 'green';
             const shapeQuery = new ShapeQuery();
 
-            // There's no exact counterpart to Java's getClass() in JavaScript. Mostly that's due to JavaScript being a prototype-based language
-            // therefore we can use the instanceof to determine if the generated object is the object we believe it to be 
+            // There's no counterpart to Java's getClass() in JavaScript. Mostly that's due to JavaScript being a prototype-based language
+            //Therefore we can use the instanceof to determine if the generated object is the object we believe it to be 
             expect(shapeQuery.findShape(test_string, color) instanceof Circle);
         });
         
