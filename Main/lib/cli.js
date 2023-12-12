@@ -1,4 +1,4 @@
-// calling the inquier package
+// calling the inquirer package
 const inquirer = require('inquirer');
 const shapeQuery = require('./shapeQuery.js');
 const LogoText = require('./generateLogoText.js');
@@ -16,7 +16,7 @@ let shapes = ['Circle', 'Triangle', 'Square'];
 
 class CLI {
 
-  // this function will be called in the index. js
+  //This function will be called in the index. js
   run() {
 
     // returning the data from inquirer's prompt
@@ -49,7 +49,7 @@ class CLI {
       ])
       .then((inquirer) => {
         console.log('Generated logo.svg');
-        // we are passing the inquirer data to the function formatSVG
+        //We are passing the inquirer data to the function format SVG
         // found in generateSVG.js
         const currentShape = new shapeQuery();
         const loadedLogoText = new LogoText(inquirer.logo, inquirer.textColor);
