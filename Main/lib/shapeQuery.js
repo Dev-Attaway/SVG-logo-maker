@@ -3,12 +3,12 @@ const Triangle = require('./triangle')
 const Square = require('./square')
 const FileWrite = require('fs');
 
-
 class ShapeQuery {
-
     findShape(shape, shapeColor) {
         let foundShape;
 
+        // returning the foundShape based on the value of the variable shape
+        // this shape is also created and given a color based on the value of shapeColor
         switch (shape) {
             case 'Circle':
                 foundShape = new Circle(shapeColor);
@@ -43,6 +43,10 @@ class ShapeQuery {
             // function (err) will display an error if the write didn't occur otherwise
             // it will display the success message 'filename +  created!'
         });
+    }
+
+    formatSVG() {
+        return `<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">`
     }
 }
 module.exports = ShapeQuery;
