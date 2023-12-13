@@ -1,6 +1,10 @@
 # SVG Logo Generator
 ![License Badge](https://shields.io/badge/license-MIT-green)
 
+
+![logo](https://github.com/Dev-Attaway/SVG-logo-maker/assets/145059598/d5d9e128-1672-4190-b9ca-4a89766ac2ac)<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg"><polygon points="150, 18 244, 182 56, 182" fill="blue" /><text x="146" y="125" font-size="50" font-family="monospace" letter-spacing="-2.5px" text-anchor="middle" fill="white"></text></svg>
+
+
 ## Table of Contents
 1. [Description](#description)
 2. [Installation](#installation)
