@@ -7,34 +7,33 @@ describe('ShapeQuery', () => {
     describe('findShape', () => {
         // testing all the cases in which a Circle, Triangle, or Square object can be generated
         it('Should create an object "shape" based on the parameter given', () => {
-            const test_string = 'Cirlce';
+            const test_string = 'Circle';
             const color = 'green';
             const shapeQuery = new ShapeQuery();
 
-            // There's no counterpart to Java's getClass() in JavaScript. Mostly that's due to JavaScript being a prototype-based language
-            //Therefore we can use the instanceof to determine if the generated object is the object we believe it to be 
-            expect(shapeQuery.findShape(test_string, color) instanceof Circle);
+            // Use .toBeInstanceOf(Class) to check that an object is an instance of a class. This matcher uses instanceof underneath.
+            expect(shapeQuery.findShape(test_string, color)).toBeInstanceOf(Circle);
         });
 
         it('Should create an object "shape" based on the parameter given', () => {
             const test_string = 'Triangle';
             const color = 'green';
             const shapeQuery = new ShapeQuery();
-            expect(shapeQuery.findShape(test_string, color) instanceof Triangle);
+            expect(shapeQuery.findShape(test_string, color)).toBeInstanceOf(Triangle);
         });
 
         it('Should create an object "shape" based on the parameter given', () => {
             const test_string = 'Square';
             const color = 'green';
             const shapeQuery = new ShapeQuery();
-            expect(shapeQuery.findShape(test_string, color) instanceof Square);
+            expect(shapeQuery.findShape(test_string, color)).toBeInstanceOf(Square);
         });
     });
 
     describe('formatSVG', () => {
         it('Should create a svg html tag', () => {
             const shapeQuery = new ShapeQuery();
-            expect(shapeQuery.formatSVG === '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">');
+            expect(shapeQuery.formatSVG()).toEqual( '<svg version="1.1" width="300" height="200" xmlns="http://www.w3.org/2000/svg">');
         });
     });
 });
